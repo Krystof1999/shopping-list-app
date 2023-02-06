@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import TopSection from "./components/topSection";
+import Content from "./components/content";
+import { useState } from "react";
 
 function App() {
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      body: "Milk",
+      checked: false,
+    },
+    {
+      id: 2,
+      body: "Cucumber",
+      checked: false,
+    },
+    {
+      id: 3,
+      body: "Chocolate",
+      checked: false,
+    },
+  ]);
+
+  const [newItem, setNewItem] = useState("");
+
+  const addItem = (body) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const structureOfNewItem = { id, body, checked: false };
+    const itemsArr = [...items, structureOfNewItem];
+    setItems(itemsArr);
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    if (!newItem) return;
+
+    addItem(newItem);
+    setNewItem("");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app-body">
+        <TopSection handleClick={handleClick} setNewItem={setNewItem} />
+        <Content items={items} />
+      </div>
     </div>
   );
 }
