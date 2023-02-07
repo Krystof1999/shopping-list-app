@@ -1,6 +1,8 @@
 import TopSection from "./components/topSection";
 import Content from "./components/content";
 import { useState } from "react";
+import Footer from "./components/footer";
+import RadioButton from "./components/radio-buttons";
 
 function App() {
   const [items, setItems] = useState([
@@ -44,6 +46,8 @@ function App() {
       <div className="app-body">
         <TopSection handleClick={handleClick} setNewItem={setNewItem} />
         <Content items={items} />
+        <Footer />
+        <RadioButton />
       </div>
     </div>
   );

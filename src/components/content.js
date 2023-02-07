@@ -5,7 +5,7 @@ const Content = ({ items }) => {
     <div className="items">
       {items.map((item) => (
         <div className="item-div" key={item.id}>
-          <input type={"checkbox"} />
+          <input type={"checkbox"} className={"checkbox"} />
           <span>{item.body}</span>
         </div>
       ))}
