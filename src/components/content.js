@@ -1,6 +1,6 @@
 import React from "react";
 import { Radio } from "@mui/material";
-import { IconName } from "react-icons/fa";
+// import { IconName } from "react-icons/fa";
 
 const Content = ({ items, handleCHeck }) => {
   return (
@@ -14,7 +14,7 @@ const Content = ({ items, handleCHeck }) => {
             style={{ color: "	#707070" }}
           />
           <span className="span">{item.body}</span>
-          <span className="food-icons">span</span>
+          <span className="food-icons">icon</span>
         </div>
       ))}
     </div>
