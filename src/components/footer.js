@@ -9,7 +9,7 @@ const Footer = ({ items, handleDeleteAll, handleDeleteSelected }) => {
 
       <button
         className="footer-button-clear-selected"
-        // onClick={() => handleDeleteSelected(item.id)} //TODO
+        onClick={handleDeleteSelected}
       >
         Clear Selected
       </button>

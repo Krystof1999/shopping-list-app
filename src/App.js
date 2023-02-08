@@ -66,8 +66,9 @@ function App() {
     setItems(itemsArr);
   };
 
-  const handleDeleteSelected = (e) => {
-    console.log(e);
+  const handleDeleteSelected = () => {
+    const checkFiletred = items.filter((item) => item.checked === false);
+    setItems(checkFiletred);
   };
 
   return (
@@ -80,6 +81,7 @@ function App() {
         />
         <Content items={items} handleCHeck={handleCHeck} />
         <Footer
+          items={items}
           handleDeleteAll={handleDeleteAll}
           handleDeleteSelected={handleDeleteSelected}
         />

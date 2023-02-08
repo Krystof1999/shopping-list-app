@@ -1,5 +1,6 @@
 import React from "react";
 import { Radio } from "@mui/material";
+import { IconName } from "react-icons/fa";
 
 const Content = ({ items, handleCHeck }) => {
   return (
@@ -10,9 +11,10 @@ const Content = ({ items, handleCHeck }) => {
             key={item.id}
             onClick={() => handleCHeck(item.id)}
             checked={item.checked}
-            style={{ color: "grey" }}
+            style={{ color: "	#707070" }}
           />
-          <span>{item.body}</span>
+          <span className="span">{item.body}</span>
+          <span className="food-icons">span</span>
         </div>
       ))}
     </div>

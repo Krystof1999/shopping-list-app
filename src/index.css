@@ -7,6 +7,11 @@
   background-color: lightcoral;
 }
 
+.food-icons{
+  display: inline-block;
+  float: right;
+}
+
 .app-body{
   background-color: lightblue;
   padding-left: 50px;
@@ -14,8 +19,13 @@
   padding-top: 20px;
   border: 1px solid black;
   border-radius: 25px;
+}
+
+.input{
+  background-color: #cbd9dc;
   
 }
+
 
 .footer-div{
   margin-top: 30px;
@@ -34,104 +44,25 @@
   padding-left: 12px;
   padding-right: 12px;
   margin-bottom: 30px;
+  background-color: #b2dcb8;
   
 } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /* .app-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: #f2f2f2;
+ 
+.footer-button-clear-all{
+  padding: 5px;
+  border-radius: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 30px;
+  background-color: #dcb2bd;
 }
 
-.top-section-form {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+.footer-button-clear-selected{
+  padding: 5px;
+  border-radius: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 30px;
+  background-color: #dcb2bd;
 }
 
-input[type="text"] {
-  width: 80%;
-  height: 40px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #e6e6e6;
-  border-radius: 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-#add-button {
-  width: 20%;
-  height: 40px;
-  padding: 10px;
-  font-size: 18px;
-  background-color: #28a745;
-  border: 1px solid #28a745;
-  border-radius: 20px;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.item-div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px #ccc;
-}
-
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-}
-
-span {
-  font-size: 16px;
-  padding: 10px;
-}
-
-@media (max-width: 600px) {
-  input[type="text"] {
-    width: 90%;
-  }
-
-  #add-button {
-    width: 10%;
-  }
-}
-
-@media (max-width: 420px) {
-  .top-section-form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  input[type="text"] {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  #add-button {
-    width: 100%;
-  }
-} */
