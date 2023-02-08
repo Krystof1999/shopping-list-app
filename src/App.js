@@ -3,25 +3,34 @@ import Content from "./components/content";
 import { useState } from "react";
 import Footer from "./components/footer";
 import RadioButton from "./components/radio-buttons";
+import { useEffect } from "react";
 
 function App() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      body: "Milk",
-      checked: false,
-    },
-    {
-      id: 2,
-      body: "Cucumber",
-      checked: true,
-    },
-    {
-      id: 3,
-      body: "Chocolate",
-      checked: false,
-    },
-  ]);
+  // const [items, setItems] = useState([
+  //   {
+  //     id: 1,
+  //     body: "Milk",
+  //     checked: false,
+  //   },
+  //   {
+  //     id: 2,
+  //     body: "Cucumber",
+  //     checked: true,
+  //   },
+  //   {
+  //     id: 3,
+  //     body: "Chocolate",
+  //     checked: false,
+  //   },
+  // ]);
+
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("shoppingItem")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("shoppingItem", JSON.stringify(items));
+  }, [items]);
 
   const [newItem, setNewItem] = useState("");
 
@@ -57,6 +66,10 @@ function App() {
     setItems(itemsArr);
   };
 
+  const handleDeleteSelected = (e) => {
+    console.log(e);
+  };
+
   return (
     <div className="App">
       <div className="app-body">
@@ -66,7 +79,10 @@ function App() {
           newItem={newItem}
         />
         <Content items={items} handleCHeck={handleCHeck} />
-        <Footer handleDeleteAll={handleDeleteAll} />
+        <Footer
+          handleDeleteAll={handleDeleteAll}
+          handleDeleteSelected={handleDeleteSelected}
+        />
         <RadioButton />
       </div>
     </div>
