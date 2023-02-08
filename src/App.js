@@ -14,7 +14,7 @@ function App() {
     {
       id: 2,
       body: "Cucumber",
-      checked: false,
+      checked: true,
     },
     {
       id: 3,
@@ -41,12 +41,32 @@ function App() {
     setNewItem("");
   };
 
+  const handleCHeck = (e) => {
+    const checkArr = items.map((item) => {
+      if (item.id === e) {
+        return { ...item, checked: !item.checked };
+      }
+      return item;
+    });
+    setItems(checkArr);
+  };
+
+  const handleDeleteAll = () => {
+    let itemsArr = [...items];
+    itemsArr = [];
+    setItems(itemsArr);
+  };
+
   return (
     <div className="App">
       <div className="app-body">
-        <TopSection handleClick={handleClick} setNewItem={setNewItem} />
-        <Content items={items} />
-        <Footer />
+        <TopSection
+          handleClick={handleClick}
+          setNewItem={setNewItem}
+          newItem={newItem}
+        />
+        <Content items={items} handleCHeck={handleCHeck} />
+        <Footer handleDeleteAll={handleDeleteAll} />
         <RadioButton />
       </div>
     </div>

@@ -1,9 +1,11 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ handleDeleteAll }) => {
   return (
     <div className="footer-div">
-      <button className="footer-button">Clear all</button>
+      <button className="footer-button" onClick={handleDeleteAll}>
+        Clear all
+      </button>
     </div>
   );
 };
